@@ -91,7 +91,7 @@ net.Receive("DeleteReport", function(len, client)
 end)
 
 hook.Add("PlayerSay", "OpenReportMenu", function(ply, text)
-	if (string.sub(text, 1, 8) == "!reporta") then
+	if (string.sub(text, 1, 8) == "!reporta" && ply:SA() then
 		net.Start("OpenReportMenu_Admin");
 			net.WriteTable(reports);
 		net.Send(ply);
