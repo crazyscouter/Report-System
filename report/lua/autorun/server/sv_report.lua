@@ -19,6 +19,7 @@ end
 
 local function CreateReport(creator, against, reason, details)
 	if (!creator or !against or !reason or !details) then msg(creator, "One or more fields were not supplied!"); return; end
+	if (!IsValid(against)) then msg(creator, "Player not found!"); return; end
 
 	local can, tim = creator:CanReport();
 
@@ -62,7 +63,6 @@ net.Receive("NewReport", function(len, client)
 	if (!against or !reason or !details) then msg(creator, "One or more fields were not supplied!"); return; end
 	
 	for k, v in pairs(player.GetAll()) do
-		print(v:Nick(), against)
 		if (v:Nick() == against) then against = v; end
 	end
 

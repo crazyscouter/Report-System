@@ -18,3 +18,5 @@ report.SuperAdminGroups = { //put other non-super-admin groups here that should 
 report.BracketColor = Color(0, 0, 0, 255); //color of the brackets in a chat message.
 report.ReportTextColor = Color(255, 25, 25, 255); //color of the "Reports" text in a chat message.
 report.MsgColor = Color(255, 255, 255, 255); //general text color of a message.
+
+report.Version = "7-13-14"; //don't edit this.
