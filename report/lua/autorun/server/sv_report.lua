@@ -93,7 +93,8 @@ end)
 hook.Add("PlayerSay", "OpenReportMenu", function(ply, text)
 	if (string.sub(text, 1, string.len(report.AdminChatCommand)) == report.AdminChatCommand && ply:Admin()) then
 		net.Start("OpenReportMenu_Admin");
-			net.WriteTable(reports);
+			local reps = util.TableToJSON(reports);
+			net.WriteString(reps);
 		net.Send(ply);
 	elseif (string.sub(text, 1, string.len(report.ChatCommand)) == report.ChatCommand) then
 		net.Start("OpenReportMenu");
