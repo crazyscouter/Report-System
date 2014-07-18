@@ -23,7 +23,8 @@ surface.CreateFont("reportBtn", {font = "coolvetica", size = 30, weight = 500})
 surface.CreateFont("reportBtnSmall", {font = "coolvetica", size = 15, weight = 500})
 
 net.Receive("OpenReportMenu_Admin", function()
-	local reports = table.Reverse(net.ReadTable());
+	local reports = net.ReadString();
+	local reports = util.JSONToTable(reports);
 	local info = nil; 
 	local key = 0;
 
